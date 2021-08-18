@@ -31,9 +31,9 @@ int main(){
 Dentro de este ciclo  sera necesario cambiar el valor de \verb+run+, para salir del ciclo y terminar la ejecución del programa.
 
 \begin{figure}[h]
-\caption{Diagrama de Flujo del Ciclo para un Menú}
-\centering
-\includegraphics[scale=0.5]{menu_loop.png}
+    \caption{Diagrama de Flujo del Ciclo para un Menú}
+    \centering
+    \includegraphics[scale=0.5]{menu_loop.png}
 \end{figure}
 
 Con una variable programa se captura que programa el usuario desea ejecutar, esta variable es evaluada con un switch envez de agrupar multiples condicionales.
@@ -63,5 +63,14 @@ switch(programa) {
         cout << "Esa no es una opción valida";
 }
 \end{lstlisting}
+
+En el caso \verb+default+ cuando el usuario no ingrese una de las 3 opciones, sera entonces dirigido a un ciclo para terminar la ejecución del programa. Cuando termine de ejecutarse el \verb+switch+, el ciclo del menu inicial continuara ejecutando y el usuario podra escoger otro programa por ejecutar.
+
+\begin{figure}[h]
+    \caption{Diagrama de Flujo de Switch para Escoger Programas}
+    \centering
+    \includegraphics[scale=0.7]{switch_menu.png}
+\end{figure}
+
 
 \end{document}
