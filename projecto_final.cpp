@@ -2,6 +2,9 @@
 using namespace std;
 
 int main(){
-    cout << "Hola Mundo" << endl;
+    bool run = true;
+    do {
+        // Programa
+    } while(run);
     return 0;
 }

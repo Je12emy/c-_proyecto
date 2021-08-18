@@ -1,5 +1,8 @@
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\graphicspath{ {./figuras/} }
 
 \title{Proyecto Final de Informática}
 \author{Julian Rodríguez Vega, Dayanna Lugo Vargas y Maria Fernanda Marin}
@@ -11,8 +14,27 @@
 \maketitle
 \end{titlepage}
 
-In this document some extra packages and parameters
-were added. There is an encoding package
-and pagesize and fontsize parameters.
+\section{Menú}
+
+Iniciando con el menú de inicio, con un ciclo \verb+do while+ o un ciclo \verb+while+, junto a una variable de tipo booleana, es posible programar un programa por consola que pueda continuar corriendo constantemente.
+
+\begin{lstlisting}[language=c++]
+int main(){
+    bool run = true;
+    do {
+        // Programa
+    } while(run);
+    return 0;
+}
+\end{lstlisting}
+
+Dentro de este ciclo  sera necesario cambiar el valor de \verb+run+, para salir del ciclo y terminar la ejecución del programa.
+
+\begin{figure}[h]
+\caption{Diagrama de Flujo del Ciclo para un Menú}
+\centering
+\includegraphics[scale=0.5]{menu_loop.png}
+\end{figure}
+
 
 \end{document}
