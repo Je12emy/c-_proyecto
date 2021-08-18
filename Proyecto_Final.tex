@@ -1,8 +1,10 @@
 \documentclass[12pt]{article}
-\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
 \usepackage{listings}
 \usepackage{graphicx}
 \graphicspath{ {./figuras/} }
+\UseRawInputEncoding
 
 \title{Proyecto Final de Informática}
 \author{Julian Rodríguez Vega, Dayanna Lugo Vargas y Maria Fernanda Marin}
@@ -36,5 +38,32 @@ Dentro de este ciclo  sera necesario cambiar el valor de \verb+run+, para salir 
 \includegraphics[scale=0.5]{menu_loop.png}
 \end{figure}
 
+Con una variable programa se captura que programa el usuario desea ejecutar, esta variable es evaluada con un switch envez de agrupar multiples condicionales.
+
+\begin{lstlisting}[language=c++]
+
+cout << "Programas Disponibles" << endl;
+cout << "1. Calculador de Promedio" << endl;
+cout << "2. Contador de Digitos." << endl;
+cout << "3. Sucesión Numerica." << endl;
+
+int programa;
+cout << "Ingrese una opción: ";
+cin >> programa;
+
+switch(programa) {
+    case 1:
+        // Programa Calculador de promedio
+        break;
+    case 2:
+        // Programa Contador de Digitos
+        break;
+    case 3:
+        // Programa Susesión Numerica
+        break;
+    default:
+        cout << "Esa no es una opción valida";
+}
+\end{lstlisting}
 
 \end{document}
