@@ -1,8 +1,19 @@
 \documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
 \usepackage{listings}
 \usepackage{graphicx}
 \graphicspath{ {./figuras/} }
+
+\lstset{
+literate=
+ {á}{{\'a}}1 
+ {ã}{{\~a}}1 
+ {é}{{\'e}}1 
+ {ó}{{\'o}}1
+ {ú}{{\'u}}1
+ %extend the list as needed
+ }
 
 \title{Proyecto Final de Informática}
 \author{Julian Rodríguez Vega, Dayanna Lugo Vargas y Maria Fernanda Marin}
