@@ -40,24 +40,23 @@ int main(){
                     // Capturar la entrada
                     cout << "Ingrese un numero:" << "";
                     cin >> numero;
+                    int tamaño = numero.length();
                     // Con la funcion length es posible obtner el tamaño de una cadena de texto
-                    if(numero.length() < 8) {
+                    if(tamaño < 8) {
                         // Variables acumuladores
                         int suma = 0;
-                        int digitos = 0;
                         // Variable temporal para guardar el valor de un item dentro de la cadena de texto
                         string temp;
                         // Iterar por cada item en la cadena de texto
-                        while(digitos < numero.length()) {
+                        for(int i = 0; i < tamaño; i++){
                             // Guardar el valor actual
-                            temp = numero[digitos];
+                            temp = numero[i];
                             suma = suma + stoi(temp);
-                            digitos++;
                         }
                         // Mostrar resultados
                         cout << endl;
                         cout << "- Suma de los digitos: " << suma << endl;
-                        cout << "- Cantidad de digitos: " << digitos << endl;
+                        cout << "- Cantidad de digitos: " << tamaño << endl;
 
                     } else {
                         cout << "Ese numero no es valido" << endl;
