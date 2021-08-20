@@ -64,8 +64,33 @@ int main(){
                     break;
                 }
             case 3:
+                {
                 // Programa Susesión Numerica
+                cout << "Susesión Numerica" << endl;
+                // Numero maximo por imprimir
+                const int maximo = 20;
+                // Indicador de cuada cuanto se reinicia la secuencia
+                const int parada = 5;
+                for(int i = 0; i < maximo; i++) {
+                    // No imprimir la primera iteración de 0
+                    if(i != 0){
+                        // Imprirmir numero
+                        cout << i << "";
+                    }
+                    // Imprimir todos los numeros hasta el numero actual
+                    // Si el numero actual es multiplo de la variable parada
+                    if((i % parada) == 0) {
+                        cout << endl;
+                        // Imprimir todos los numeros hasta el numero actual
+                        for(int j = 0; j < i+1; j++) {
+                            cout << j << "";
+                        }
+                    } 
+
+                }
+                cout << endl;
                 break;
+                }
             default:
                 cout << "Esa no es una opción valida";
         }

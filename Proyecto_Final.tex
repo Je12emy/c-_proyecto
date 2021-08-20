@@ -133,5 +133,50 @@ if(tamaño < 8) {
     \includegraphics[scale=0.5]{programa2_ciclo.png}
 \end{figure}
 
+\section{Susesión Numerica}
+
+La sucesión numérica busca imprimir una sucesión números hasta una "parada", en donde se imprimaran los números ya recorridos y los siguientes números en la sucesión hasta llegar a la siguiente parada o hasta llegar a 20. Primero se inicia verificando si el numero actual por imprimir no es 0, esto se hace para evitar imprimir únicamente 0 y no romper con la secuencia numérica.
+
+\begin{lstlisting}[language=c++]
+const int maximo = 20;
+// Indicador de cuada cuanto se reinicia la secuencia
+const int parada = 5;
+for(int i = 0; i < maximo; i++) {
+// No imprimir la primera iteración de 0
+    if(i != 0){
+        // Imprirmir numero
+        cout << i << "";
+    }
+    // Imprimir numeros hasta llegar a un multiplo de la variable parada
+    }
+cout << endl;
+\end{lstlisting}
+
+\begin{figure}[H]
+    \caption{Diagrama de Flujo del Ciclo y Condicional Iniciales del Programa 3}
+    \centering
+    \includegraphics[scale=0.5]{programa3_ciclo1.png}
+\end{figure}
+
+Mediante una variable \verb+integer+ llamada parada, se revisa si un numero es múltiplo de este, para imprimir los números previos a este, esto es logrado mediante el operador \verb+modulus+ en un condicional.
+
+\begin{lstlisting}[language=c++]
+
+// Imprimir todos los numeros hasta el numero actual
+// Si el numero actual es multiplo de la variable parada
+if((i % parada) == 0) {
+    cout << endl;
+    // Imprimir todos los numeros hasta el numero actual
+    for(int j = 0; j < i+1; j++) {
+        cout << j << "";
+    }
+} 
+\end{lstlisting}
+
+\begin{figure}[H]
+    \caption{Diagrama de Flujo del Ciclo para Imprimir Todos los Números Antes de un Numero "x"}
+    \centering
+    \includegraphics[scale=0.5]{programa3_ciclo2.png}
+\end{figure}
 
 \end{document}
