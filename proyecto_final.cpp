@@ -4,6 +4,8 @@ using namespace std;
 
 int main(){
     bool run = true;
+    // Contador de intentos restantes
+    int intentos = 3;
     do {
         // Información del Proyecto
         cout << "===============================================" << endl;
@@ -11,7 +13,7 @@ int main(){
         cout << "===============================================" << endl;
         cout << endl;
         
-        cout << "~ Julian Rodriguez Vega 117080874" << endl;
+        cout << "~ Julian Rodriguez Vega: 117110191" << endl;
         cout << "~ Dayanna Lugo Vargas: 117030085" << endl;
         cout << "~ Maria Fernanda Marin: 118260918" << endl;
 
@@ -32,7 +34,8 @@ int main(){
         switch(programa) {
             case 1:
                 {
-
+                // Reiniciar el contador de intentos
+                intentos = 3;
                 cout << "--------------------------------" << endl;
                 cout << "-      Promedio Ponderado      -" << endl;
                 cout << "--------------------------------" << endl;
@@ -106,6 +109,8 @@ int main(){
                 }
             case 2:
                 {
+                    // Reiniciar el contador de intentos
+                    intentos = 3;
                     // Programa Contador de Dígitos
                     cout << "--------------------------------" << endl;
                     cout << "-      Contador de Dígitos     -" << endl;
@@ -140,6 +145,8 @@ int main(){
                 }
             case 3:
                 {
+                // Reiniciar el contador de intentos
+                intentos = 3;
                 // Programa Susesión Numerica
                 cout << "--------------------------------" << endl;
                 cout << "-    Sucesión Numérica         -" << endl;
@@ -169,8 +176,44 @@ int main(){
                 cout << endl;
                 break;
                 }
-            default:
-                cout << "Esa no es una opción valida";
+            case 4:
+            {
+                intentos = 3;
+                char salir;
+                cout << "¿Desea salir del programa?[s/n]: ";
+                cin >> salir;
+            
+                switch (salir) {
+                    case 's':
+                    {
+                        cout << "Cerrando programa...." << endl;
+                        run = false;
+                        break;
+                    }
+                    case 'n':
+                    {
+                        break;
+                    }
+                    default:
+                    {
+                        cout << "Esa no es una opción!" << endl;
+                    }
+                }
+            break;
+
+            }
+            default: 
+            {
+                // Reducir la cantidad de intentos
+                intentos = intentos - 1;
+                cout << "Esa no es una opción valida... Intentos restantes " << intentos << endl;
+                if (intentos == 0) {
+                    cout << "Ha llegado al limite de intentos, cerrando programa.." << endl;
+                    run = false;
+                }
+                break;
+            }
+
         }
     } while(run);
     return 0;
