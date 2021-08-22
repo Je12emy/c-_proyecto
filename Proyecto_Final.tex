@@ -47,7 +47,7 @@ Dentro de este ciclo  sera necesario cambiar el valor de \verb+run+, para salir 
 \begin{figure}[h]
     \caption{Diagrama de Flujo del Ciclo para un Menú}
     \centering
-    \includegraphics[scale=0.5]{menu_loop.png}
+    \includegraphics[scale=0.8]{menu_loop.png}
 \end{figure}
 
 Con una variable programa se captura que programa el usuario desea ejecutar, esta variable es evaluada con un switch envez de agrupar multiples condicionales.
@@ -83,18 +83,77 @@ En el caso \verb+default+ cuando el usuario no ingrese una de las 3 opciones, se
 \begin{figure}[H]
     \caption{Diagrama de Flujo de Switch para Escoger Programas}
     \centering
-    \includegraphics[scale=0.4]{switch_menu.png}
+    \includegraphics[scale=0.6]{switch_menu.png}
 \end{figure}
 
+\pagebreak
 
-\section{Programa Contador de Dígitos}
+\section{Programas}
+
+Según la opción seleccionada, se ejecutara uno de los siguientes 3 programas, adicionalmente se solicita proporcionar un máximo de 3 intentos en caso de que un usuario ingrese un valor erróneo. Para este programa de salida se hace uso de un contador declarado antes del ciclo principal del programa, en caso de que el usuario ingrese un valor no definido en el switch de selección sera enviado al caso default, en donde se reduce el contador de intentos y se muestra una advertencia. Si el usuario gasta sus 3 intentos, la variable run seria modificada a false y el programa terminara de ejecutar. Para facilitar el uso del programa, este contador es reiniciado cuando el usuario selecciona cualquiera de los programas mostrados.
+
+\begin{figure}[H]
+    \caption{Diagrama de Flujo del Programa de Salida }
+    \centering
+    \includegraphics[scale=0.4]{programa_salida.png}
+\end{figure}
+
+\pagebreak
+
+\subsection{Calculador de Promedio Ponderado}
+
+Este programa inicia solicitando información sobre el estudiante, luego pide un valor y un porcentaje para 6 instrumentos. Una vez se obtienen los 12 datos necesitados, el promedio ponderado es calculado directamente en una variable de tipo float llamada resultado. Finalmente se verifica si la variable resultado es mayor o igual a 70 para mostrar que el estudianto aprovo el curso o no.
+
+
+\begin{figure}[H]
+    \caption{Diagrama de Flujo del Programa 1}
+    \centering
+    \includegraphics[scale=0.5]{programa1.png}
+\end{figure}
+
+\begin{lstlisting}[language=c++]
+// Programa Calculador de promedio
+string nombre;
+
+cout << "Ingrese un nombre: " << "";
+cin >> nombre;
+
+float nota1;
+float porcentaje1;
+float resultado;
+
+// Obtener valores
+cout << "- Ingrese un valor para el primer instrumento: ";
+cin >> nota1;
+cout << "+ Ingrese un porcentaje para el primer instrumento: ";
+cin >> porcentaje1;
+
+// Calcular promedio ponderado
+// Fuente: https://es.wikihow.com/calcular-el-promedio-ponderado
+resultado = (nota1 * porcentaje1/100) + //resto de notas y porcentajes;
+
+cout << endl;
+cout << "Resultados: " << endl;
+cout  << "Calificación final es " << resultado << endl;
+
+// Evaluar resultado
+if(resultado >= 70) {
+    cout << nombre <<" ha aprobado el curso!" << endl;
+} else {
+    cout << nombre <<" ha reprobado el curso" << endl;
+}
+\end{lstlisting}
+
+\pagebreak
+
+\subsection{Programa Contador de Dígitos}
 
 El segundo programa en el enunciado solicita mostrar la cantidad de dígitos en un numero y la suma de los mismos, este valor puede ser almacenado en una variable de tipo \verb+string+ la cual se encuentra compuesta por un conjunto de caracteres sobre los cuales se puede iterar. Para revisar la cantidad de caracteres dentro de una cadena de texto es posible utilizar la función \verb+length()+, la cual esguardada en una nueva variable y usada para validar la cantidad de dígitos en el numero con un condicional, en donde, de ser un numero valido se continuara con el ciclo sino se mostrara un mensaje de error y el usuario sera dirigido al menu principal.
 
 \begin{figure}[H]
     \caption{Diagrama de Flujo de la Validación en el Contador de Dígitos}
     \centering
-    \includegraphics[scale=0.5]{programa2_validacion.png}
+    \includegraphics[scale=0.6]{programa2_validacion.png}
 \end{figure}
 
 Para este ciclo se utilizara un ciclo \verb+for+ y una variable temporal para guardar el valor del carácter por el cual se esta iterando en el ciclo, puesto que esta variable sera de tipo \verb+string+, sera necesario convertirla a \verb+integer+ con la función \verb+stoi+ y así incrementar la variable con la suma de los dígitos.
@@ -130,10 +189,12 @@ if(tamaño < 8) {
 \begin{figure}[H]
     \caption{Diagrama de Flujo del Ciclo para Sumar Dígitos en un Numero}
     \centering
-    \includegraphics[scale=0.5]{programa2_ciclo.png}
+    \includegraphics[scale=0.6]{programa2_ciclo.png}
 \end{figure}
 
-\section{Susesión Numerica}
+\pagebreak
+
+\subsection{Susesión Numerica}
 
 La sucesión numérica busca imprimir una sucesión números hasta una "parada", en donde se imprimaran los números ya recorridos y los siguientes números en la sucesión hasta llegar a la siguiente parada o hasta llegar a 20. Primero se inicia verificando si el numero actual por imprimir no es 0, esto se hace para evitar imprimir únicamente 0 y no romper con la secuencia numérica.
 
@@ -155,8 +216,10 @@ cout << endl;
 \begin{figure}[H]
     \caption{Diagrama de Flujo del Ciclo y Condicional Iniciales del Programa 3}
     \centering
-    \includegraphics[scale=0.5]{programa3_ciclo1.png}
+    \includegraphics[scale=0.6]{programa3_ciclo1.png}
 \end{figure}
+
+\pagebreak
 
 Mediante una variable \verb+integer+ llamada parada, se revisa si un numero es múltiplo de este, para imprimir los números previos a este, esto es logrado mediante el operador \verb+modulus+ en un condicional.
 
@@ -176,7 +239,7 @@ if((i % parada) == 0) {
 \begin{figure}[H]
     \caption{Diagrama de Flujo del Ciclo para Imprimir Todos los Números Antes de un Numero "x"}
     \centering
-    \includegraphics[scale=0.5]{programa3_ciclo2.png}
+    \includegraphics[scale=0.6]{programa3_ciclo2.png}
 \end{figure}
 
 \end{document}
